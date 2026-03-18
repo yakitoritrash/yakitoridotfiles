@@ -1,0 +1,55 @@
+add_newline = false
+scan_timeout = 10
+
+# Updated main format to ensure color continuity
+format = """
+$username$directory$git_branch$git_status$time$shell$character"""
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = "[](bold #cba6f7)"
+error_symbol = "[](bold #f38ba8)"
+
+[username]
+# Arch icon section using the vivid indigo
+format = "[ ](fg:#cba6f7 bold)[󰣇](fg:#1e1e2e bg:#cba6f7 bold)[ ](fg:#cba6f7 bg:#313244 bold)"
+show_always = true
+disabled = false
+
+[directory]
+# Transitioning from indigo to a softer surface gray
+format = "[$path]($style)[$read_only](fg:#cdd6f4 bg:#313244)[](fg:#313244 bg:#1e1e2e bold)"
+style = "fg:#cdd6f4 bg:#313244"
+truncation_symbol = "…/"
+truncate_to_repo = false
+truncation_length = 100
+home_symbol = " "
+
+[git_branch]
+# Using mauve for the git section
+format = "[](fg:#f5c2e7 bg:#1e1e2e)[$symbol$branch](fg:#1e1e2e bg:#f5c2e7)[ ](fg:#f5c2e7 bg:#313244 bold)"
+symbol = " "
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]](fg:#cdd6f4 bg:#313244)[ ](fg:#cdd6f4 bg:#313244))'
+
+[time]
+format = '[\[$time\] ](fg:#cdd6f4 bg:#313244)'
+utc_time_offset = "local"
+time_format = "%T"
+disabled = false
+
+[shell]
+# Bash indicator matched specifically to the indigo theme
+bash_indicator = "[](fg:#cba6f7 bg:#313244)[BSH-MODE](fg:#1e1e2e bg:#cba6f7)[](fg:#cba6f7 bg:#313244)[  ](fg:#cba6f7 bg:#313244)[](fg:#313244)"
+# Other indicators updated to match the palette
+zsh_indicator = "[](fg:#89b4fa bg:#313244)[ZSH-MODE](fg:#1e1e2e bg:#89b4fa)[](fg:#89b4fa bg:#313244)"
+fish_indicator = "[](fg:#94e2d5 bg:#313244)[FSH-MODE](fg:#1e1e2e bg:#94e2d5)[](fg:#94e2d5 bg:#313244)"
+style = "fg:#cdd6f4 bg:#313244"
+disabled = false
+
+[battery]
+full_symbol = ""
+format = "[ $symbol$percentage ](fg:#cdd6f4)"
